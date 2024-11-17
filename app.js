@@ -17,7 +17,7 @@ const Bonjour = require('bonjour-service');
 const bonjour = new Bonjour.Bonjour();
 const logger = require('electron-log');
 const config = require('./config');
-const updateUrl = `https://update.iprodanov.com/files`;
+const updateUrl = `https://localhost`;
 
 autoUpdater.logger = logger;
 autoUpdater.setFeedURL({
@@ -379,12 +379,6 @@ function getMenu() {
         } else {
           await useAutoUpdater();
         }
-      },
-    },
-    {
-      label: 'Open on github.com',
-      click: async () => {
-        await shell.openExternal('https://github.com/iprodanovbg/homeassistant-desktop');
       },
     },
     {
